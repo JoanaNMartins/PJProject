@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Home Page!</h1>
+    <p>{{content}}</p>
+    <p>{{r}}</p>
+    <!--- Pode-se escrever "somewhat native Python"
+    em HTML desde que seja as bellow (outras coisas devem ter
+    uma sintaxe algo diferente) --->
+    {% for x in range (10)%}
+        {% if x % 2 == 1 %}
+            <p>Hello</p>
+        {% else %}
+            <p>Goodbye!</p>
+        {% endif %}
+    {% endfor %}
+    
+    <h2>Printing list</h2>
+        <p>Printing a list that was inserted in Python file</p>
+    {% for x in list %}
+        <p>{{x}}</p>
+    {% endfor %}
+     
+</body>
+
+</html>

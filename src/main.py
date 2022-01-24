@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     # in line html can be returned in a function 
-    return render_template("index.html", list=["Ju", "André", "Tsuki"])
+    return render_template("index.html", content="test", list=["Ju", "André", "Tsuki"])
 
 
 # podem ser inseridas "variáveis" no argumento do "decorador", namely 
@@ -33,6 +33,7 @@ def content(name):
 def admin():
     return redirect(url_for("user", name="Admin!"))
 
-# Initiates the site
+# Initiates the site and debug True faz com que o 
+# programa detete as alterações no código e vá actualizando o site
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
