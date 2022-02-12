@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Temperature Converter{% endblock %}
+
+{% block content %}
+<div class="container-fluid my-2 mx-1">
+    <h2>Temperature Converter</h2>
+</div>
+
+<!-- Como fazer nested columns and rows -->
+<div class="container-fluid my-4 mx-2">
+    <div class="row">
+      <div class="col-sm-2">
+        <p>Fahrenheit and Celsius</p>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-8 col-sm-6">
+            Level 2: .col-8 .col-sm-6
+          </div>
+          <div class="col-4 col-sm-6">
+            Level 2: .col-4 .col-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+

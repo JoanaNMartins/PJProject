@@ -21,9 +21,9 @@ def login():
     # post method 
 
     if request.method == "POST":
-        # needed to say that we want that timeframe for keeping you logged in
-        # if not specified it only keeps you logged in for however long you 
-        # keep the browser open
+        # needed to say that we want that timeframe for keeping 
+        # you logged in if not specified it only keeps you 
+        # logged in for however long you keep the browser open
         session.permanent = True
 
         # to save the information we use request.form and create a 
@@ -43,6 +43,10 @@ def login():
 def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
+
+@app.route("/temperature")
+def temperature():
+    return render_template("temperature.html")
 
 @app.route("/user")
 def user():
