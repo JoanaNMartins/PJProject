@@ -44,7 +44,7 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-@app.route("/temperature")
+@app.route("/temperature", methods=["POST","GET"])
 def temperature():
     return render_template("temperature.html")
 

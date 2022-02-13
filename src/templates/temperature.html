@@ -14,19 +14,33 @@
       </div>
       <div class="col-sm-9">
         <div class="row">
-          <div class="col-8 col-sm-6">
+          <div class="col-md-auto col-sm-4">
             <form action="#" method="post">
-              <p><input type="text" name="F_Input" placeholder="0"/>   ºFahrenheit</p>
+              <p><input id="temp_input" type="text" name="F_Input" placeholder="0" style="width: 100px;"/>   ºF</p>
             </form>
           </div>
-          <div class="col-4 col-sm-6">
-            Celsius output
+          <div class="col-md-auto col-sm-4">
+            Celsius output:
+            <p><input id="temp_output" type="text" name="" placeholder="0" style="width: 100px;"/>   ºC</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <script>
+    document.getElementById("temp_input")
+    .addEventListener("keyup", function (evt) {
+      // console.log for debbuging purposes
+      console.log(this.value);
+
+      // conversão da temperatura
+      // let converted_val = (5/9) * (this.value - 32);
+
+      // return/display converted value
+      document.getElementById("temp_output").value = Math.round((5/9) * (this.value - 32));
+    }, false);
+  </script>
 
 {% endblock %}
 
