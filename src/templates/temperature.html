@@ -2,7 +2,7 @@
 
 {% block title %}Temperature Converter{% endblock %}
 
-{% block page_scripts %} <script type="text/javascript" src="../resources/javascript.js"> </script>{% endblock page_scripts %}
+{% block page_scripts %}<script type="text/javascript" src="{{ url_for('static', filename='javascript.js') }}"> </script>{% endblock page_scripts %}
 
 {% block content %}
 <div class="container-fluid my-2 mx-1">
@@ -30,33 +30,7 @@
     </div>
   </div>
 
-  <script>
-    
-    document.getElementById("temp_F")
-    .addEventListener("keyup", function (evt) {
-      // console.log for debbuging purposes
-      console.log(this.value);
-
-      // conversão da temperatura
-      // let converted_val = (5/9) * (this.value - 32);
-
-      // return/display converted value with 2 decimals
-      document.getElementById("temp_C").value = parseFloat(((5/9) * (this.value - 32)).toFixed(2));
-    }, false);
-
-    document.getElementById("temp_C")
-    .addEventListener("keyup", function (evt) {
-      // console.log for debbuging purposes
-      console.log(this.value);
-
-      // conversão da temperatura
-      // let converted_val = (5/9) * (this.value - 32);
-
-      // return/display converted value with 2 decimals
-      document.getElementById("temp_F").value = parseFloat(((9/5) * (this.value) + 32).toFixed(2));
-    }, false);
-
-  </script>
+ 
 
 {% endblock content %}
 
